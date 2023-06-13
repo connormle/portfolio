@@ -109,6 +109,7 @@ await emailjs.send(serviceId, templateId, params, 'ed30-R7z7_EH-yu97')
         <div class="navbar-links">
           <a class="link" href="#about">About</a>
           <a class="link" href="#contact">Contact</a>
+          <a class="link" href="#projects">Projects</a>
         </div>
       </nav>
     </header>
@@ -153,7 +154,7 @@ await emailjs.send(serviceId, templateId, params, 'ed30-R7z7_EH-yu97')
   </div>
   <section class="about" id="about">
     <div class="about-content">
-      <h3 id="rr">ABOUT ME</h3>
+      <h3>ABOUT ME</h3>
       <h2>Passionate and Dedicated Front End Developer</h2>
       <p v-motion-fade-visible>Through the past few months, I've discovered a true passion for web development. I've taken my skills to the online freelance market, where I offer my expertise to businesses. My go-to tech stack includes Vue.js and Firebase, but I'm always open to learning new technologies. As a newer developer, I take pride in creating beautiful and interactive websites at an affordable price. If you're interested in working together, don't hesitate to reach out. Let's collaborate and bring your vision to life.</p>
     </div>
@@ -163,7 +164,7 @@ await emailjs.send(serviceId, templateId, params, 'ed30-R7z7_EH-yu97')
       </div>
     </div>
   </section>
-  <h3 class="gradient" style="text-align: center; padding-top: 5rem;">PORTFOLIO</h3>
+  <h3 class="gradient" style="text-align: center; padding-top: 5rem;" id="projects">PORTFOLIO</h3>
     <h2 class="projecth1" v-motion-fade-visible style=" padding-bottom: 4rem;">Some of my Projects</h2>
   <section  v-motion-fade-visible :delay="150"  class="projects">
     <div class="project" v-motion-fade-visible>
@@ -659,10 +660,20 @@ textarea {
 /* Media queries for smaller devices */
 
 @media only screen and (max-width: 600px) {
+  .navbar-body a {
+  font-size: 1.2rem;
+}
   .navbar {
     justify-content: center;
     padding-right: 1.6rem;
-    padding-top: 1rem;
+    padding-top: 1rem
+  }
+  .navbar-body {
+    justify-content: center;
+  }
+  .link {
+    margin-left: 2rem;
+    margin-right: 1.5rem;
   }
   .logo {
    display: none;
@@ -686,10 +697,6 @@ textarea {
     margin-left: 0;
     margin-right: 0;
   }
-.project-content {
-  padding-left: 10px;
-  padding-right: 10px;
-}
   .about p {
     font-size: 1rem;
   }
@@ -713,21 +720,19 @@ textarea {
 .project img {
   width: 360px;
 }
-.project-image {
-  padding-left: 0;
-  padding-top: 10px;
-}
+
 .about-image {
   display: none;
 }
 }
 
 @media only screen and (max-width: 1180px) and (min-width: 600px) {
-.logo h4 {
-  font-size: 1.6rem;
-  margin-left: 15px;
-}
-
+  .logo {
+   display: none;
+  }
+  .navbar {
+    padding-top: 1rem;
+  }
 .project {
   display: flex;
   align-items: center;
