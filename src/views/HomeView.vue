@@ -590,7 +590,7 @@ textarea {
   padding-bottom: 20px;
 }
 .project h3 {
-  color: #c7d3df;
+  color: #cacbcc;
 }
 .projects {
   display: flex;
@@ -631,6 +631,7 @@ textarea {
 .project p {
   font-size: 1.1rem;
   line-height: 2rem;
+  color: #d3d3d3;
 }
 .reverse {
   flex-direction: row-reverse;
@@ -700,7 +701,9 @@ textarea {
   .about p {
     font-size: 1rem;
   }
-  
+  .about h2 {
+    font-size: 1.8rem;
+  }
   .project {
   display: flex;
   align-items: center;
@@ -720,7 +723,15 @@ textarea {
 .project img {
   width: 360px;
 }
-
+.project p {
+  font-size: 1rem;
+}
+.project h3 {
+  font-size: 2rem;
+}
+.project h4 {
+  font-size: 1.3rem;
+}
 .about-image {
   display: none;
 }
