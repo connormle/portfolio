@@ -362,9 +362,8 @@ a {
   margin-right: 1rem;
 }
 .main {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
-
 .main::after {
   content: "";
   background-image: url("https://cdn.discordapp.com/attachments/703285604166926396/1114650624504635415/tech_stack.png");
@@ -378,7 +377,16 @@ a {
   animation: scroll 2200s infinite linear;
 }
 
-
+.main::before {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				background: linear-gradient(to bottom, transparent 65%, #0f172a);
+				width: 100%;
+				height: 100%;
+				content: "";
+				z-index: 10;
+}
 @keyframes scroll {
   from {
     background-position: 0 0;
