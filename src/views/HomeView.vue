@@ -306,6 +306,7 @@ html, body {
   padding: 1rem;
   background-color: rgb(5, 5, 121);
   border-radius: 5px;
+  z-index: 10000;
 }
 .logo h4 {
   padding: 1.5rem;
@@ -385,7 +386,7 @@ a {
 				width: 100%;
 				height: 100%;
 				content: "";
-				z-index: 10;
+				z-index: 1;
 }
 @keyframes scroll {
   from {
