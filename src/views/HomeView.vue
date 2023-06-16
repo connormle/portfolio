@@ -19,6 +19,41 @@ export default {
       message: '',
       sent: false,
       error: false,
+      projects: [
+      {
+        title: 'Nore Media',
+        category: 'Frontend Web Development',
+        description: 'A Dynamic Website for Nore Media, a leading digital and social marketing agency dedicated to helping businesses thrive in the digital landscape.',
+        tags: ['#html', '#css', '#js', '#bootstrap'],
+        image:'https://cdn.discordapp.com/attachments/1041122682982371439/1117124364106727476/ezgif-1-58964e489f.gif',
+          reversed: false,
+      },
+      {
+        title: 'Bruhware',
+        category: 'Frontend Web Development',
+        description: 'Website for a Universal Roblox Multitool Service written in pure Lua that enhances their gaming experience and expands their creative possibilities within the Roblox platform.',
+        tags: ['#html', '#css', '#js'],
+        image:'https://cdn.discordapp.com/attachments/1041122682982371439/1117133586739499098/ezgif-1-e2184cce11.gif',
+          reversed: true,
+      },
+      {
+        title: 'Vue + Firebase Pastebin',
+        category: 'Frontend Web Development with BaaS',
+        description: 'A Pastebin site created using Firebase and the Vue router that offering users a reliable and efficient platform for storing and sharing text-based information. This site provides a user-friendly interface where individuals can conveniently store snippets of code, text, or any other type of information they want to save or share.',
+        tags: ['#vuejs', '#css', '#firebase'],
+        image: 'https://cdn.discordapp.com/attachments/1041122682982371439/1117135453557112943/ezgif-1-75d8179f6b.gif',
+        reversed: false
+     
+      },
+      {
+        title: 'iCreate Pro',
+        category: 'Frontend Web Development',
+        description: 'An unreleased website for the Geometry Dash modding service, iCreate Pro, that allows users to expand the customizations that the game has to offer.',
+        tags: ['#html', '#css', '#js', '#bootstrap'],
+        image: 'https://cdn.discordapp.com/attachments/1041122682982371439/1117136041896317018/ezgif-1-5e39cac6b3.gif',
+        reversed: false,
+      }
+    ]
     };
   },
   methods: {
@@ -166,103 +201,22 @@ await emailjs.send(serviceId, templateId, params, 'ed30-R7z7_EH-yu97')
   </section>
   <h3 class="gradient" style="text-align: center; padding-top: 5rem;" id="projects">PORTFOLIO</h3>
     <h2 class="projecth1" v-motion-fade-visible style=" padding-bottom: 4rem;">Some of my Projects</h2>
-  <section  v-motion-fade-visible :delay="150"  class="projects">
-    <div class="project" v-motion-fade-visible>
+  <section class="projects">
+    <div v-motion-fade-visible class="project" v-for="(project, index) in projects" :key="index" :class="{ reverse: project.reversed }">
       <div class="project-content">
-     <h3>Nore Media</h3>
-     <h4>Frontend Web Development</h4>
-      <p>A Dynamic Website for Nore Media, a leading digital and social marketing agency dedicated to helping businesses thrive in the digital landscape.</p>
-      <div class="tags">
-        <div class="tag">
-          #html
-        </div>
-        <div class="tag">
-           #css
-        </div>
-        <div class="tag">
-           #js
-        </div>
-        <div class="tag">
-           #bootstrap
+        <h3>{{ project.title }}</h3>
+        <h4>{{ project.category }}</h4>
+        <p>{{ project.description }}</p>
+        <div class="tags">
+          <div class="tag" v-for="(tag, tagIndex) in project.tags" :key="tagIndex">
+            {{ tag }}
+          </div>
         </div>
       </div>
-    </div>
-     <div class="project-image">
-      <img src="https://cdn.discordapp.com/attachments/1041122682982371439/1117124364106727476/ezgif-1-58964e489f.gif" alt="">
-    </div>
-    </div>
-
-    <div class="project reverse" v-motion-fade-visible>
-    <div class="project-content">
-     <h3>Bruhware</h3>
-     <h4>Frontend Web Development</h4>
-      <p>Website for a Universal Roblox Multitool Service written in pure Lua that enhances their gaming experience and expands their creative possibilities within the Roblox platform.</p>
-      <div class="tags">
-        <div class="tag">
-          #html
-        </div>
-        <div class="tag">
-           #css
-        </div>
-        <div class="tag">
-           #js
-        </div>
+      <div class="project-image">
+        <img :src="project.image" :alt="project.name" />
       </div>
     </div>
-    <div class="project-image">
-      <img src="https://cdn.discordapp.com/attachments/1041122682982371439/1117133586739499098/ezgif-1-e2184cce11.gif" alt="">
-    </div>
-    </div>
-
-
-    <div class="project" v-motion-fade-visible>
-      <div class="project-content">
-     <h3>Vue + Firebase Pastebin</h3>
-        <h4>Frontend Web Development with BaaS</h4>
-      <p>A Pastebin site created using Firebase and the Vue router that offering users a reliable and efficient platform for storing and sharing text-based information. This site provides a user-friendly interface where individuals can conveniently store snippets of code, text, or any other type of information they want to save or share.</p>
-      <div class="tags">
-        <div class="tag">
-          #vuejs
-        </div>
-        <div class="tag">
-           #css
-        </div>
-        <div class="tag">
-           #firebase
-        </div>
-      </div>
-    </div>
-     <div class="project-image">
-      <img src="https://cdn.discordapp.com/attachments/1041122682982371439/1117135453557112943/ezgif-1-75d8179f6b.gif" alt="">
-    </div>
-    </div>
-
-
-    <div class="project reverse" v-motion-fade-visible>
-    <div class="project-content">
-      <h3>iCreate Pro</h3>
-     <h4>Frontend Web Development</h4>
-      <p>An unreleased website for the Geometry Dash modding service, iCreate Pro, that allows users to expand the customizations that the game has to offer.</p>
-      <div class="tags">
-        <div class="tag">
-          #html
-        </div>
-        <div class="tag">
-           #css
-        </div>
-        <div class="tag">
-           #js
-        </div>
-        <div class="tag">
-           #bootstrap
-        </div>
-      </div>
-    </div>
-    <div class="project-image">
-      <img src="https://cdn.discordapp.com/attachments/1041122682982371439/1117136041896317018/ezgif-1-5e39cac6b3.gif" alt="">
-    </div>
-    </div>
-
   </section>
 
 
@@ -617,6 +571,8 @@ textarea {
   text-align: center;
   align-items: center;
   flex-direction: column;
+padding: 3rem;
+border-radius: 15px;
 }
 
 .project-content p {
@@ -639,6 +595,11 @@ textarea {
  flex-direction: row;
  gap: 6rem;
   margin-bottom: 20vh;
+  background-color: #0f172a;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+margin-left: 3rem;
+margin-right: 3rem;
+border-radius: 10px;
 }
 
 .project p {
@@ -672,7 +633,11 @@ textarea {
 }
 
 /* Media queries for smaller devices */
-
+@media only screen and (max-height: 600px) {
+.navbar {
+  display: none;
+}
+}
 @media only screen and (max-width: 600px) {
   .navbar-body a {
   font-size: 1.2rem;
@@ -718,33 +683,21 @@ textarea {
   .about h2 {
     font-size: 1.8rem;
   }
-  .projects {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
-  }
-  .projects::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
-}
+
   .project {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: #11192e;
-  box-shadow: 0 2px 4px rgba(7, 7, 7, 0.3); /* Add box shadow */
+  background-color: #0f172a;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin-left: 15px;
   margin-right: 15px;
   border-radius: 10px;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  scroll-snap-align: start;
 }
-.project-image {
-  display: none;
-}
+
 .project-content {
   padding-right: 15px;
   padding-left: 15px;
@@ -792,14 +745,13 @@ textarea {
   border-radius: 10px;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  scroll-snap-align: start;
+  background-color: #0f172a;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-.projects {
-    height: 120vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-  }
 .project p {
   margin-left: 2rem;
   margin-right: 2rem;
@@ -830,5 +782,9 @@ textarea {
 }
 
 }
+
+
+
+
 
 </style>
