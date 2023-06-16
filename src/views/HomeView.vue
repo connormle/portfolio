@@ -509,6 +509,8 @@ margin-bottom: 20vh;
   font-size: 60px;
 }
 
+
+
 @keyframes m-anim {
   0% {
     transform: translate(calc(100vh + 100px));
@@ -527,6 +529,7 @@ margin-bottom: 20vh;
   border-radius: 5px;
   padding: 4px;
   box-shadow: 0 2px 4px rgba(36, 35, 35, 0.3); /* Add box shadow */
+  z-index: -111;
 }
 .marquee div {
   height: 70px;
@@ -673,6 +676,7 @@ textarea {
   .navbar-body a {
   font-size: 1.2rem;
 }
+
   .navbar {
     justify-content: center;
     padding-right: 1.6rem;
@@ -713,6 +717,11 @@ textarea {
   .about h2 {
     font-size: 1.8rem;
   }
+  .projects {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
   .project {
   display: flex;
   align-items: center;
@@ -725,6 +734,17 @@ textarea {
   border-radius: 10px;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  scroll-snap-align: start;
+}
+.project-content {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.project-image {
+  padding-top: 0;
+  margin-top: 0;
 }
 .project p {
   width:auto;
@@ -758,16 +778,19 @@ textarea {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: #11192e;
-  box-shadow: 0 2px 4px rgba(7, 7, 7, 0.3); /* Add box shadow */
   margin-left: 40px;
   margin-right: 40px;
   border-radius: 10px;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  scroll-snap-align: start;
 }
 
-
+.projects {
+    height: 120vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
 .project p {
   margin-left: 2rem;
   margin-right: 2rem;
