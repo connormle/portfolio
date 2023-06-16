@@ -217,7 +217,7 @@ await emailjs.send(serviceId, templateId, params, 'ed30-R7z7_EH-yu97')
 
     <div class="project" v-motion-fade-visible>
       <div class="project-content">
-     <h3>Firebase Paste Site</h3>
+     <h3>Vue + Firebase Pastebin</h3>
         <h4>Frontend Web Development with BaaS</h4>
       <p>A Pastebin site created using Firebase and the Vue router that offering users a reliable and efficient platform for storing and sharing text-based information. This site provides a user-friendly interface where individuals can conveniently store snippets of code, text, or any other type of information they want to save or share.</p>
       <div class="tags">
@@ -502,6 +502,7 @@ margin-bottom: 20vh;
     overflow: hidden;
   gap: 40px;
 }
+
 .marquee div:hover {
   animation-play-state: paused;
 }
@@ -721,7 +722,12 @@ textarea {
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
   }
+  .projects::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
   .project {
   display: flex;
   align-items: center;
@@ -735,6 +741,9 @@ textarea {
   padding-top: 2rem;
   padding-bottom: 2rem;
   scroll-snap-align: start;
+}
+.project-image {
+  display: none;
 }
 .project-content {
   padding-right: 15px;
@@ -753,7 +762,7 @@ textarea {
   width: 360px;
 }
 .project p {
-  font-size: 1rem;
+  font-size: .8rem;
 }
 .project h3 {
   font-size: 2rem;
